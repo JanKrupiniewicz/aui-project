@@ -1,0 +1,26 @@
+### Books ###
+GET http://localhost:8081/books
+
+###
+GET http://localhost:8081/books/5c316195-51a6-49ad-b8cc-b72def9345f2
+
+###
+PUT http://localhost:8081/books
+Content-Type: application/json
+
+{
+    "title": "My Book I",
+    "authorId": "d749bdd9-0931-4ed0-9ce5-f1ea5bf418b5"
+}
+
+###
+PUT http://localhost:8081/books/5ad82101-036f-4b31-ab65-559a30caa197
+Content-Type: application/json
+
+{
+    "title": "The Shining",
+    "authorId": "94d0cc4c-c94f-4088-b156-be458cc5f478"
+}
+
+###
+DELETE http://localhost:8081/books/5ad82101-036f-4b31-ab65-559a30caa197

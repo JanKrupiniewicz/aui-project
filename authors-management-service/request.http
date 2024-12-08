@@ -1,0 +1,27 @@
+### Authors ###
+GET http://localhost:8082/api/authors
+
+###
+GET http://localhost:8082/api/authors/00000000-0000-0000-0000-000000000001
+
+
+###
+POST http://localhost:8082/api/authors
+Content-Type: application/json
+
+{
+  "name": "Stephen",
+  "surname": "King"
+}
+
+###
+PUT http://localhost:8082/api/authors/00000000-0000-0000-0000-000000000004
+Content-Type: application/json
+
+{
+  "name": "Adam",
+  "surname": "Mickiewicz"
+}
+
+###
+DELETE http://localhost:8082/api/authors/00000000-0000-0000-0000-000000000001

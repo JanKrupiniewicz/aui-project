@@ -1,0 +1,56 @@
+### Authors ###
+GET http://localhost:8080/api/authors
+
+###
+GET http://localhost:8080/api/authors/00000000-0000-0000-0000-000000000001
+
+###
+GET http://localhost:8080/authors/1/books
+
+###
+POST http://localhost:8080/authors
+Content-Type: application/json
+
+{
+  "name": "Stephen",
+  "surname": "King"
+}
+
+###
+PUT http://localhost:8080/authors/00000000-0000-0000-0000-000000000001
+Content-Type: application/json
+
+{
+  "name": "Adam",
+  "surname": "Mickiewicz"
+}
+
+###
+DELETE http://localhost:8080/authors/d21f5642-39b2-42e6-baae-2e4b3eccdbd5
+
+### Books ###
+GET http://localhost:8080/books
+
+###
+GET http://localhost:8080/books/44d7b365-78a6-4a79-851d-5ad7c1a2ea90
+
+###
+PUT http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "My Book I",
+  "authorId": "db203c81-9ff5-4f2c-bc3f-8e7d653c2d04"
+}
+
+###
+PUT http://localhost:8080/books/44d7b365-78a6-4a79-851d-5ad7c1a2ea90
+Content-Type: application/json
+
+{
+  "title": "The Shining",
+  "authorId": "db203c81-9ff5-4f2c-bc3f-8e7d653c2d04"
+}
+
+###
+DELETE http://localhost:8080/books/44d7b365-78a6-4a79-851d-5ad7c1a2ea90
