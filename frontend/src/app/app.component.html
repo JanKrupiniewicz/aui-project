@@ -1,0 +1,18 @@
+<nav class="flex flex-row p-5 justify-around bg-red-500">
+  <h1 class="text-4xl italic mx-5 font-bold tracking-tight">
+    <a routerLink="/authors"> Angular Framework </a>
+  </h1>
+  <div class="flex items-center justify-center space-x-5 md:space-x-16">
+    <a
+      class="text-center bg-red-100 p-3 px-5 rounded-full font-bold italic text-red-500 hover:bg-white hover:text-red-600"
+      routerLink="/authors"
+      >Authors List</a
+    >
+    <a
+      class="text-center bg-red-100 p-3 px-5 rounded-full font-bold italic text-red-500 hover:bg-white hover:text-red-600"
+      routerLink="/authors/add"
+      >Add Author</a
+    >
+  </div>
+</nav>
+<router-outlet />

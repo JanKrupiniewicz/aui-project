@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  # Serwis Author Management
+  authors-management:
+    image: aui-project-authors
+    container_name: authors-management
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_PROFILES_ACTIVE: "docker"
+    networks:
+      - app-network
+
+  # Serwis Books Management
+  books-management:
+    image: aui-project-books
+    container_name: books-management
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: "docker"
+    networks:
+      - app-network
+
+  # Serwis Gateway
+  api-gateway:
+    image: aui-project-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      AUTHOR_SERVICE_URL: "http://authors-management:8082"
+      BOOK_SERVICE_URL: "http://books-management:8081"
+    networks:
+      - app-network
+
+  # Frontend - np. Angular
+  frontend:
+    image: aui-project-frontend
+    container_name: frontend
+    ports:
+      - "4200:88"
+    environment:
+      API_URL: "http://api-gateway:8080/api"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
